@@ -69,7 +69,7 @@ public class SeleccionPage {
         manejoArchivos.setNombreArchivo("Reto2.xls");
         manejoArchivos.setNombreHoja("Precios Despegar");
         manejoArchivos.leerArchivo();
-        for(int i=0;i<vecPrecios.length;i++) {
+        for(int i=0;i<7;i++) {
         	int intPrecio = vecPrecios[i];
         	strPrecio = String.valueOf(intPrecio);
         	System.out.println(strPrecio);
