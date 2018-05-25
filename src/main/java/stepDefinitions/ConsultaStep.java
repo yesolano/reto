@@ -111,5 +111,10 @@ public class ConsultaStep {
 		String msj = consultaPage.mensajeErrorCiudadIgual();
 		assertEquals("El destino debe ser diferente del origen", msj);
 	}
+	
+	@Then("Se muestra mensaje de error fecha regreso menor")
+	public void mensajeErrorFechas() {
+		consultaPage.mensajeErrorFechaRegresoMenor();
+	}
 
 }

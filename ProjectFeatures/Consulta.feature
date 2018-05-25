@@ -21,6 +21,23 @@ Feature: Busqueda de tiquetes
   | ciudadOrigen | ciudadDestino | numeroPasajeros | fechaPartida | fechaRegreso |
   | Medellin | Cartagena | 2 | 01/09/2018 | 29/09/2018 |
   
+    @Test  
+  Scenario Outline: Consulta de vuelo FechaRegreso menor a FechaPartida fallido
+    Given el usuario esta en la pagina Despegar
+    When el usuario selecciona el menu vuelos
+    And el usuario ingresa el tipo de vuelo 
+    And el usuario ingresa el origen "<ciudadOrigen>"
+    And el usuario ingresa el destino "<ciudadDestino>"
+    And el usuario selecciona el numero de pasajeros "<numeroPasajeros>"
+    And el usuario selecciona fecha partida "<fechaPartida>"
+    And el usuario selecciona fecha de regreso "<fechaRegreso>"
+    Then Se muestra mensaje de error fecha regreso menor
+    
+    
+  Examples:
+  | ciudadOrigen | ciudadDestino | numeroPasajeros | fechaPartida | fechaRegreso |
+  | Medellin | Cartagena | 2 | 03/09/2018 | 01/09/2018 |
+  
      
  	@Test  
   Scenario Outline: Consulta de vuelo sin ciudad Destino Fallida
