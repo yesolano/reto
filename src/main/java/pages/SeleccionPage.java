@@ -3,10 +3,15 @@ package pages;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.util.CellUtil;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,7 +37,7 @@ public class SeleccionPage {
 		System.out.println("Cantidad de precios capturados: " + cantPrecios);
 
 			for(int i=1; i<=vecPrecios.length;i++) {
-				WebElement elementPrecio = driver.findElement(By.xpath("//*[@id=\'clusters\']/span["+ i + "]/span/cluster/div/div/span/fare/span/span/main-fare/span/span[2]/flights-price/span/flights-price-element/span/span/em/span[2]"));
+				WebElement elementPrecio = driver.findElement(By.xpath("//*[@id=\'clusters\']/span[" + i + "]/span/cluster/div/div/span/fare/span/span/div[1]/item-fare/p/span/flights-price/span/flights-price-element/span/span/em/span[2]"));
 				String precio = elementPrecio.getText();
 				
 				precio = precio.replace(".", "");
@@ -60,6 +65,7 @@ public class SeleccionPage {
 	}
 
 	public void exportarPrecios() {
+
 		
 		int j=0;
 		String strPrecio = "";
@@ -76,7 +82,8 @@ public class SeleccionPage {
         	manejoArchivos.setValorCelda(0, j, "Precio"+(i+1));
         	manejoArchivos.setValorCelda(1, j, strPrecio);
         	if(i==0) {
-  
+        		
+        	manejoArchivos.setColorCelda(1,j, strPrecio);
         	}
     	j++;
         }
