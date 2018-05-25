@@ -1,5 +1,7 @@
 package pages;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -42,8 +44,6 @@ public class ConsultaPage {
 	public void txtOrigen(String ciudadOrigen) throws InterruptedException{
 
 		WebElement txtOrigen = driver.findElement(By.xpath("//input[contains(@placeholder, 'Ingresa desde dónde viajas')]"));
-		//WebElement txtOrigen = driver.findElement(By.xpath("//*[@id='searchbox-sbox-all-boxes']/div[2]/div/div/div[3]/div[2]/div[1]/div[1]/div/div[1]/div/div/div/input"));
-	
 		txtOrigen.clear();
 		txtOrigen.sendKeys(ciudadOrigen);
 		Thread.sleep(1000);
@@ -53,7 +53,6 @@ public class ConsultaPage {
 	public void txtDestino(String ciudadDestino) throws InterruptedException {
 
 		WebElement txtDestino = driver.findElement(By.xpath("//input[contains(@placeholder, 'Ingresa hacia dónde viajas')]"));
-		//WebElement txtDestino = driver.findElement(By.xpath("//*[@id=\'searchbox-sbox-all-boxes\']/div[2]/div/div/div[3]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div/input"));
 		txtDestino.clear();
 		txtDestino.sendKeys(ciudadDestino);
 		Thread.sleep(1000);
@@ -80,6 +79,7 @@ public class ConsultaPage {
 		int mesActual = 5;
 		int diaDeseadoP = Integer.parseInt(sDia);
 		int mesDeseadoP = Integer.parseInt(sMes);
+			
 		
 		WebElement xCalendarioP = driver.findElement(By.xpath("//*[@id=\'searchbox-sbox-all-boxes\']/div[2]/div/div/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]"));
 		WebElement xSigMesP = driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div[2]/i"));
@@ -89,7 +89,6 @@ public class ConsultaPage {
 		}
 		WebElement xDiaP = driver.findElement(By.xpath("/html/body/div[4]/div/div[4]/div[5]/div[4]/span[" + diaDeseadoP + "]"));	
 		xDiaP.click();
-
 	}
 
 	public void txtFechaRegreso(String fechaRegreso) throws InterruptedException{

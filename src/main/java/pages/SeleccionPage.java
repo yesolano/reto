@@ -65,7 +65,6 @@ public class SeleccionPage {
 	}
 
 	public void exportarPrecios() {
-
 		
 		int j=0;
 		String strPrecio = "";
@@ -82,7 +81,6 @@ public class SeleccionPage {
         	manejoArchivos.setValorCelda(0, j, "Precio"+(i+1));
         	manejoArchivos.setValorCelda(1, j, strPrecio);
         	if(i==0) {
-        		
         	manejoArchivos.setColorCelda(1,j, strPrecio);
         	}
     	j++;
