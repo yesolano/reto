@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="ProjectFeatures", glue="stepDefinitions")
+@CucumberOptions(features = "ProjectFeatures", glue = "stepDefinitions")
 public class ConsultaRunner {
 
 }
