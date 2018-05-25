@@ -43,7 +43,7 @@ public class SeleccionPage {
 				}
 			}
 		}
-
+		System.out.println("------PRECIOS CAPTURADOS--------");
 		for (int f = 0; f < vecPrecios.length; f++) {
 			System.out.println(vecPrecios[f]);
 		}
@@ -55,7 +55,6 @@ public class SeleccionPage {
 		int j = 0;
 		String strPrecio = "";
 
-		System.out.println("------PRECIOS CAPTURADOS--------");
 		ManejoArchivos manejoArchivos = new ManejoArchivos();
 		manejoArchivos.setNombreArchivo("Reto2.xls");
 		manejoArchivos.setNombreHoja("Precios Despegar");
